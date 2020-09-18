@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@RepositoryRestResource(exported = false)//este recurso não permite a exposição da classe via webservice
+@RepositoryRestResource(exported = false)//este recurso não permite a exportação do repositório de usuários.
 public interface AppUserRepository extends CrudRepository<AppUser, Integer> {
 
 	AppUser findByUsername(String username);
