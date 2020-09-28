@@ -3,6 +3,7 @@ package br.com.bilotta.bluetasks.domain.task;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PrePersist;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import br.com.bilotta.bluetasks.domain.user.AppUser;
@@ -24,5 +25,10 @@ public class TaskListener {
 			
 			task.setAppUser(appUser);
 		}
+	}
+	
+	@Autowired
+	public void init(AppUserRepository appUserRepository) {
+		TaskListener.appUserRepository = appUserRepository;
 	}
 }
